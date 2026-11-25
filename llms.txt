@@ -1,0 +1,20 @@
+# Paper Sky
+
+The market, one paper chapter a day. Real keyless market data, ELI5 explanations, an honest simulated ledger, and a humorous Sky note that is never a signal. Paper trading only — no real orders, no investment advice.
+
+## Entry points
+- / — today's board: five measurements, verdict, ledger, news, tomorrow hook
+- /journal/2026-11-25/ — chapter 1, full analysis
+- /notes/rsi/ — RSI: oversold is a condition, not a trigger
+- /notes/funding/ — perpetual funding and crowded positioning
+- /notes/dxy/ — the dollar backpack
+- /notes/fear-greed/ — mood ring, not compass
+- /methodology/ — data sources, risk rules, cookies
+- /archive/ — all chapters
+- /rss.xml — feed
+
+## Cross-project
+Sky Chapter (the real sky, one chapter a day): https://skychapter.sok.lv/
+
+## Disclaimer
+Informational and entertainment only. Simulated decisions; no broker connection; not investment advice.
