@@ -6,6 +6,7 @@ The market, one paper chapter a day. Real keyless market data, ELI5 explanations
 - / — today's board: five measurements, verdict, ledger, news, tomorrow hook
 - /journal/2026-11-25/ — chapter 1, full analysis
 - /notes/rsi/ — RSI: oversold is a condition, not a trigger
+- /notes/rwa/ — tokenised real-world assets and what RWA TVL actually measures
 - /notes/funding/ — perpetual funding and crowded positioning
 - /notes/dxy/ — the dollar backpack
 - /notes/fear-greed/ — mood ring, not compass
