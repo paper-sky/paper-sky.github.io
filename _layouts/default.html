@@ -10,10 +10,12 @@
   <meta property="og:title" content="{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}">
   <meta property="og:description" content="{{ page.description | default: site.description | strip_newlines | truncate: 155 }}">
   <meta property="og:url" content="{{ site.url }}{{ page.url | relative_url }}">
+  <meta property="og:site_name" content="{{ site.title }}">
   <meta property="og:image" content="{{ site.url }}/assets/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}">
   <meta name="twitter:description" content="{{ page.description | default: site.description | strip_newlines | truncate: 155 }}">
+  <meta name="twitter:image" content="{{ site.url }}/assets/og.png">
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
