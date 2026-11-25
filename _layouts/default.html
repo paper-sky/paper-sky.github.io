@@ -65,7 +65,7 @@
 
   <footer>
     <p class="disclaimer">Paper trading only. Simulated decisions, no real orders, no broker connection. Informational &amp; entertainment — <strong>not investment advice</strong>. Sky notes are a joke, never a signal.</p>
-    <p><a href="{{ '/methodology/' | relative_url }}#cookies">Cookies</a> · <a href="{{ '/llms.txt' | relative_url }}">llms.txt</a> · <a href="{{ '/rss.xml' | relative_url }}">RSS</a> · <a href="https://skychapter.sok.lv/" rel="noopener">the sky, one chapter a day</a></p>
+    <p><a href="{{ '/methodology/' | relative_url }}#cookies">Cookies</a> · <a href="#" onclick="window.psCookieSettings();return false;">Cookie settings</a> · <a href="{{ '/llms.txt' | relative_url }}">llms.txt</a> · <a href="{{ '/rss.xml' | relative_url }}">RSS</a> · <a href="https://skychapter.sok.lv/" rel="noopener">the sky, one chapter a day</a></p>
   </footer>
 
   <div id="cookiebar" hidden>
@@ -89,6 +89,11 @@
     bar.querySelectorAll('button').forEach(function (b) {
       b.addEventListener('click', function () { decide(b.getAttribute('data-c')); });
     });
+    // No choice = no consent, GA4 stays denied. Hide the notice itself after 12s.
+    setTimeout(function () {
+      if (!localStorage.getItem('ps_cookie_consent')) bar.hidden = true;
+    }, 12000);
+    window.psCookieSettings = function () { bar.hidden = false; };
   })();
   </script>
 </body>
