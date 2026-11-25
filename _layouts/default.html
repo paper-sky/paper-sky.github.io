@@ -15,22 +15,38 @@
   <meta name="twitter:title" content="{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}">
   <meta name="twitter:description" content="{{ page.description | default: site.description | strip_newlines | truncate: 155 }}">
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}?v={{ site.time | date: '%Y%m%d%H%M' }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"WebSite","name":"{{ site.title }}","url":"{{ site.url }}","description":"{{ site.description | escape }}"}
   </script>
+  {% if site.google_tag_manager %}
+  <!-- Google tag (consent-aware, snippet per analytics.google.com; same pattern as Sky Chapter) -->
   <script>
+    window.__psConsent = localStorage.getItem('ps_cookie_consent') || '';
+    window.psLoadTag = function () {
+      if (!window.__psGaLoaded) {
+        window.__psGaLoaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id={{ site.google_tag_manager }}';
+        document.head.appendChild(s);
+      }
+    };
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', {'analytics_storage':'denied','ad_storage':'denied'});
-    if (localStorage.getItem('ps_consent') === 'all') {
-      gtag('consent', 'update', {'analytics_storage':'granted'});
-    }
-  </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_tag_manager }}"></script>
-  <script>
+    gtag('consent', 'default', {
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      analytics_storage: (window.__psConsent === 'accept') ? 'granted' : 'denied'
+    });
     gtag('js', new Date());
     gtag('config', '{{ site.google_tag_manager }}');
+    if (window.__psConsent) { window.psLoadTag(); }
   </script>
+  {% endif %}
 </head>
 <body>
   <header class="topbar">
@@ -51,24 +67,27 @@
   </footer>
 
   <div id="cookiebar" hidden>
-    <span>We use a few cookies for analytics.</span>
-    <button id="cookie-accept" type="button">Accept</button>
-    <button id="cookie-essential" type="button">Essential only</button>
+    <p>We use a few cookies for site analytics. <a href="{{ '/methodology/#cookies' | relative_url }}">Details</a></p>
+    <div class="cb-actions">
+      <button type="button" data-c="accept">Accept</button>
+      <button type="button" data-c="decline" class="ghost">Essential only</button>
+    </div>
   </div>
   <script>
-    (function () {
-      var bar = document.getElementById('cookiebar');
-      if (!localStorage.getItem('ps_consent')) { bar.hidden = false; }
-      function save(v) {
-        localStorage.setItem('ps_consent', v);
-        if (v === 'all' && typeof gtag === 'function') {
-          gtag('consent', 'update', {'analytics_storage':'granted'});
-        }
-        bar.hidden = true;
-      }
-      document.getElementById('cookie-accept').onclick = function () { save('all'); };
-      document.getElementById('cookie-essential').onclick = function () { save('essential'); };
-    })();
+  (function () {
+    var bar = document.getElementById('cookiebar');
+    function decide(v) {
+      try { localStorage.setItem('ps_cookie_consent', v); } catch (e) {}
+      window.__psConsent = v;
+      if (window.gtag) gtag('consent', 'update', { analytics_storage: v === 'accept' ? 'granted' : 'denied' });
+      if (v === 'accept') window.psLoadTag();
+      bar.hidden = true;
+    }
+    if (!window.__psConsent) bar.hidden = false;
+    bar.querySelectorAll('button').forEach(function (b) {
+      b.addEventListener('click', function () { decide(b.getAttribute('data-c')); });
+    });
+  })();
   </script>
 </body>
 </html>
