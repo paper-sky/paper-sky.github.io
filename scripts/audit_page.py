@@ -101,7 +101,10 @@ def main():
                 except Exception: types.append("INVALID")
             record(checks, "JSON-LD WebSite+Article", "WebSite" in types and "Article" in types,
                    detail=str(types))
+            record(checks, "JSON-LD no duplicate WebSite", types.count("WebSite") == 1,
+                   detail=str(types))
             record(checks, "OG tags", all(x in html for x in ("og:title", "og:image", "og:url")))
+            record(checks, "twitter:image", "twitter:image" in html)
             record(checks, "cookie bar", 'id="cookiebar"' in html)
             record(checks, "consent key", "ps_cookie_consent" in html)
             record(checks, "live disclaimer", "not investment advice" in html.lower())
