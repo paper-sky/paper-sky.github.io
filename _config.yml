@@ -1,0 +1,39 @@
+title: Paper Sky
+description: The market, one paper chapter a day — real data, ELI5, honest paper ledger.
+url: https://papersky.sok.lv
+baseurl: ""
+lang: en
+future: true
+markdown: kramdown
+permalink: pretty
+
+plugins:
+  - jekyll-sitemap
+
+collections:
+  journal:
+    output: true
+    permalink: /journal/:name/
+  notes:
+    output: true
+    permalink: /notes/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "journal"
+    values:
+      layout: "journal"
+  - scope:
+      path: ""
+      type: "notes"
+    values:
+      layout: "note"
+
+google_tag_manager: "G-TJ0Y7GCCC3"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - scripts
