@@ -83,6 +83,8 @@ def main():
     record(checks, "Sky cross-link", "skychapter.sok.lv" in low or "skychapter.sok.lv" in layout_text)
     notes = sorted((ROOT / "_notes").glob("*.md"))
     record(checks, "notes >= 5", len(notes) >= 5, detail=str(len(notes)))
+    style = (ROOT / "assets" / "style.css").read_text(encoding="utf-8")
+    record(checks, "cookiebar [hidden] CSS", "#cookiebar[hidden]{display:none" in style)
     for n in notes:
         nf = frontmatter(n.read_text(encoding="utf-8"))
         record(checks, f"note {n.stem} frontmatter", bool(nf.get("title") and nf.get("description")))
