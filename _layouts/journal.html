@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<article class="chapter">
+  <p class="eyebrow">PAPER SKY · {{ page.date | date: "%B %-d, %Y" }} · snapshot 00:00 UTC</p>
+  <h1>{{ page.title }}</h1>
+  <p class="lede">{{ page.cold_open }}</p>
+
+  <section class="panel">
+    <h2>The board — five measurements</h2>
+    {{ content }}
+  </section>
+
+  <p class="hook"><strong>Tomorrow hook</strong> — {{ page.hook }}</p>
+  <p class="sky-note"><strong>Sky note (experiment)</strong> — {{ page.sky_note }} <a href="https://skychapter.sok.lv/" rel="noopener">Source: the sky, not a signal ↗</a></p>
+  <p><a class="cta" href="{{ '/' | relative_url }}">Back to today's board →</a></p>
+</article>
