@@ -1,0 +1,12 @@
+---
+layout: default
+title: Journal
+description: All Paper Sky chapters — paper trading decisions, in plain English.
+---
+<h1>Journal</h1>
+<ul class="cards">
+  {% assign eps = site.journal | sort: "date" | reverse %}
+  {% for ep in eps %}
+    <li><a href="{{ ep.url | relative_url }}">{{ ep.title }}</a><br><span class="muted">{{ ep.date | date: "%B %-d, %Y" }}</span></li>
+  {% endfor %}
+</ul>
