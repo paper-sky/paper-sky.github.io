@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<rss version="2.0">
+  <channel>
+    <title>Paper Sky</title>
+    <link>https://papersky.sok.lv/</link>
+    <description>The market, one paper chapter a day — paper trading only, not investment advice.</description>
+    <language>en</language>
+    <item>
+      <title>Chapter 1 · The $60,000 Line</title>
+      <link>https://papersky.sok.lv/journal/2026-11-25/</link>
+      <guid>https://papersky.sok.lv/journal/2026-11-25/</guid>
+      <pubDate>2026-11-25T00:00:00Z</pubDate>
+      <description>Paper Sky chapter 1: real market snapshot, ELI5 board, honest $1,000 paper ledger, and a wait decision.</description>
+    </item>
+  </channel>
+</rss>
