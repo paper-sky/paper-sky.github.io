@@ -1,0 +1,66 @@
+---
+layout: default
+title: Today
+---
+{% assign eps = site.journal | sort: "date" %}
+{% assign ep = eps.last %}
+<section class="board">
+  <p class="eyebrow">PAPER SKY · {{ ep.date | date: "%B %-d, %Y" }} · snapshot 00:00 UTC</p>
+  <h1>{{ ep.title }}</h1>
+  <p class="cold-open">{{ ep.cold_open }}</p>
+
+  <div class="ticker" aria-label="Market strip">
+    <span>BTC <b>$59,950</b> <i>+0.47% 24h</i></span>
+    <span>F&amp;G <b>13</b> <i>Extreme Fear</i></span>
+    <span>VIX <b>27.84</b></span>
+    <span>DXY <b>103.68</b></span>
+    <span>10Y <b>4.85%</b></span>
+  </div>
+
+  <h2>Five measurements, in plain English</h2>
+  <ol class="board-list">
+    <li><strong>Macro:</strong> rates and the dollar are heavy — a hawkish Fed is priced in, so risk assets carry a backpack uphill. <a href="{{ '/notes/dxy/' | relative_url }}">What DXY means</a></li>
+    <li><strong>Sentiment:</strong> Fear &amp; Greed at 13, yet 74.6% of derivatives positions are long. Panic with a crowded long side — the exit door is narrow. <a href="{{ '/notes/fear-greed/' | relative_url }}">ELI5</a></li>
+    <li><strong>On-chain:</strong> DeFi TVL $67.9B; RWA $2.84B across 191 protocols. Quiet structure, not a signal.</li>
+    <li><strong>Technical:</strong> 4H RSI 29.7 (oversold), ATR $1,169, price under the 4H EMA20. Oversold is a <em>condition</em>, not a trigger. <a href="{{ '/notes/rsi/' | relative_url }}">ELI5</a></li>
+    <li><strong>News:</strong> three neutral facts below — no story is promoted into a reason to trade.</li>
+  </ol>
+
+  <div class="verdict">
+    <span class="tag">THE TRADE</span>
+    <strong>WAIT — no trigger.</strong>
+    <p>Our rules need a 4H close above the EMA20 plus cooler VIX and a less crowded long side. None happened. Waiting is a logged decision, not a missed opportunity.</p>
+  </div>
+
+  <div class="ledger">
+    <span class="tag">LEDGER</span>
+    <span>$1,000 paper equity · 0 positions · P&amp;L $0 · max DD 0% · streak 0</span>
+    <span class="risk">Risk per trade: 1% = $10</span>
+  </div>
+
+  <p><a class="cta" href="{{ ep.url | relative_url }}">Read the full chapter →</a></p>
+</section>
+
+<section class="panel news">
+  <h2>News — three neutral facts</h2>
+  <ul>
+    <li>Bitcoin traded below $60,000 on 25 Nov as US technology shares sold off.</li>
+    <li>November spot-BTC ETF withdrawals were reported near the $5B mark.</li>
+    <li>Futures markets priced a high probability of a December Fed hike; inflation data was awaited.</li>
+  </ul>
+  <p class="muted">Facts are context. Our entry comes from rules, not headlines.</p>
+</section>
+
+<section class="panel">
+  <h2>Sky note (experiment, not a signal)</h2>
+  <p>Moon nearly full in Gemini — the sky's version of “everyone talking at once”. Cute mirror for a crowded trade. <a href="https://skychapter.sok.lv/" rel="noopener">Read the real sky chapter ↗</a></p>
+  <p class="hook"><strong>Tomorrow hook:</strong> {{ ep.hook }}</p>
+</section>
+
+<section class="cards">
+  <h2>Explainers</h2>
+  <ul>
+    {% assign ns = site.notes | sort: "title" %}
+    {% for n in ns %}<li><a href="{{ n.url | relative_url }}">{{ n.title }}</a></li>{% endfor %}
+  </ul>
+</section>
