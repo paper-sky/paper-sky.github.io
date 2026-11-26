@@ -116,7 +116,7 @@ def main():
         record(checks, "sitemap contains chapter", sm == 200 and url in smap, detail=str(sm))
         rr, rss = fetch(DOMAIN + "/rss.xml")
         record(checks, "rss contains chapter", rr == 200 and url in rss, detail=str(rr))
-        kc, _ = fetch(DOMAIN + "/indexnow-ps4f9c2a7e18b.txt")
+        kc, _ = fetch(DOMAIN + "/ps4f9c2a7e18b.txt")
         record(checks, "IndexNow key 200", kc == 200, detail=str(kc))
         nc, nh = fetch(DOMAIN + "/notes/rwa/")
         record(checks, "note page 200", nc == 200, detail=str(nc))
