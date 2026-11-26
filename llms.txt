@@ -15,7 +15,8 @@ The market, one paper chapter a day. Real keyless market data, ELI5 explanations
 - [RSS](/rss.xml): feed
 
 ## Cross-project
-- [Sky Chapter](https://skychapter.sok.lv/): the real sky, one chapter a day
+- [Sky Chapter](https://skychapter.sok.lv/): the real sky, one chapter a day — reflection, not a signal.
+- [Vita](https://vita.sok.lv/): micronutrients, decoded — dated citations, not dose advice.
 
 ## Disclaimer
 Informational and entertainment only. Simulated decisions; no broker connection; not investment advice.
