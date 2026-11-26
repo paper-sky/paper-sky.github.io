@@ -28,6 +28,9 @@ description: Data sources, paper rules, risk limits and cookies for Paper Sky.
 <h2>Sky note</h2>
 <p>The humorous astrology line is a mnemonic and a cross-link to <a href="https://skychapter.sok.lv/" rel="noopener">Sky Chapter</a>. It never enters the trading logic.</p>
 
+<h2>Around sok.lv</h2>
+<p>The same “show the source” habit drives <a href="https://vita.sok.lv/" rel="noopener">Vita</a> — a daily micronutrient note where numbers are dated citations, never dose advice. Different domain, same refusal to invent.</p>
+
 <h2 id="cookies">Cookies</h2>
 <p>We use a few cookies for analytics (the shared sok.lv GA4 stream, tag <code>G‑TJ0Y7GCCC3</code>). Analytics storage stays denied until you press “Accept”; “Essential only” keeps it off. The choice is saved in <code>ps_cookie_consent</code> in localStorage, and the Google tag script is only loaded after consent. If you make no choice, the compact notice hides itself after 12 seconds — that is <strong>not</strong> consent: analytics stays blocked. Reopen it any time with “Cookie settings” in the footer.</p>
 
