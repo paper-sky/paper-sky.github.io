@@ -81,6 +81,7 @@ def main():
     record(checks, "disclaimer present", "not investment advice" in low or "not investment advice" in layout_text)
     record(checks, "ledger $1,000", "$1,000" in body or "$1000" in body)
     record(checks, "Sky cross-link", "skychapter.sok.lv" in low or "skychapter.sok.lv" in layout_text)
+    record(checks, "Vita cross-link", "vita.sok.lv" in low or "vita.sok.lv" in layout_text)
     record(checks, "chapter has Beyond crypto", "Beyond crypto" in body)
     notes = sorted((ROOT / "_notes").glob("*.md"))
     record(checks, "notes >= 5", len(notes) >= 5, detail=str(len(notes)))
