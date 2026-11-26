@@ -42,7 +42,8 @@ def submit(urls):
         return True
     # delta mode yields relative paths; IndexNow requires absolute URLs (else 422)
     urls = [u if u.startswith("http") else SITE + u for u in urls]
-    body = json.dumps({"host": "papersky.sok.lv", "key": KEY, "urlList": urls}).encode()
+    body = json.dumps({"host": "papersky.sok.lv", "key": KEY,
+                       "keyLocation": f"{SITE}/{KEY}.txt", "urlList": urls}).encode()
     req = urllib.request.Request(ENDPOINT, data=body,
                                  headers={"Content-Type": "application/json; charset=utf-8"})
     with urllib.request.urlopen(req, timeout=30) as r:
