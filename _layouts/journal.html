@@ -3,7 +3,7 @@ layout: default
 ---
 <article class="chapter">
   {% include article-ld.html %}
-  <p class="eyebrow">PAPER SKY · {{ page.date | date: "%B %-d, %Y" }} · snapshot 00:00 UTC</p>
+  <p class="eyebrow">PAPER SKY · {{ page.date | date: "%B %-d, %Y" }} · snapshot {{ page.snapshot | default: "see chapter" }}</p>
   <h1>{{ page.title }}</h1>
   <p class="lede">{{ page.cold_open }}</p>
 
